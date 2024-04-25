@@ -1,0 +1,9 @@
+I chose to define an interface Handler that declares the handleRequest method. This interface allows different types of support handlers to implement their own logic for handling support tickets.
+Three concrete handler classes were created: HardwareHandler, SoftwareHandler and NetworkHandler each responsible for handling specific types of support tickets.These classes encapsulate the logic for processing support requests related to hardware, software and network issues respectively.
+Chain of Responsibility: The handlers were organized in a hierarchical order, where each handler is capable of either handling the request or passing it to the next handler in the chain.This chain of responsibility allows for flexible and dynamic handling of support tickets based on their types.
+The Chain of Responsibility pattern simplified the implementation of the ticketing system in several ways:
+
+Loose Coupling:By using the Chain of Responsibility pattern, each handler is loosely coupled with others in the chain.This allows for easy addition,removal or modification of handlers without affecting the rest of the system.
+Single Responsibility Principle: Each handler class has a single responsibility - handling a specific type of support request.This promotes better code organization and maintainability.
+Scalability:The pattern supports scalability by allowing new handlers to be added to the chain as needed, accommodating future requirements without major modifications to existing code.
+Flexibility:Handlers can be easily reconfigured or reordered in the chain to change the processing order or introduce new processing logic.This provides flexibility to adapt to changing business rules or priorities.
